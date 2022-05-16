@@ -1,0 +1,9 @@
+=================================================
+lattice size:              12 12
+global random seed:        0
+number of slices:          5 5 5 1 5 1 1 
+left bound of parameters:  -2 -2 -2 -1 -2 0 0 
+right bound of parameters: 2 2 2 -1 2 0 0 
+=================================================
+
+time spent: 10.1574 seconds

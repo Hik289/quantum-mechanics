@@ -1,0 +1,9 @@
+initial sample point:          1
+final sample point:            2
+total number of time slice:    512
+number of selected time slice: 30
+number select inteval:         10
+number of scanned parameters:  6
+number of total threads:       12
+number of lattice site:        64
+time spent: 0.40751 seconds

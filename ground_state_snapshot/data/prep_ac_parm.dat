@@ -1,0 +1,6 @@
+1 2
+30 10
+
+#############explanation#############
+1) averaging range: start sample index and end sample index
+2) number of time slices for analytic continuation and slice selection inteval

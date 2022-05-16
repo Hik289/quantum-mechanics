@@ -1,0 +1,20 @@
+6 6
+16
+16 32
+0 1
+1 0.5
+2
+0.5 1 1 1
+-1.2 0
+20000
+
+#expanation
+1) lattice length along x and y direction, both should be even integers
+2) inverse temperature
+3) udv setting: number of udv decomposition and udv interval
+4) random seed and initial random window
+5) hopping strength and ratio
+6) coupling strength (square root of g)
+7) strength of dynamic, gradient, squared and quartic term
+8) chemical potential and bias (plus-sign means orbital A has larger chemical potential)
+9) number of cycles

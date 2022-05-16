@@ -1,0 +1,256 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9065,        248]
+NotebookOptionsPosition[      8366,        229]
+NotebookOutlinePosition[      8699,        244]
+CellTagsIndexPosition[      8656,        241]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"lenPrmSet", "=", "7"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"numSlcList", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "40", ",", "40", ",", "40", ",", "1", ",", "40", ",", "1", ",", "1"}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"prmMinList", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "2"}], ",", "0", ",", "0"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"prmMaxList", "=", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", "2", ",", 
+     RowBox[{"-", "1"}], ",", "2", ",", "0", ",", "0"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"prmSpcList", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+         "numSlcList", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}],
+          ">", "1"}], ",", 
+        FractionBox[
+         RowBox[{
+          RowBox[{
+          "prmMaxList", "\[LeftDoubleBracket]", "i", 
+           "\[RightDoubleBracket]"}], "-", 
+          RowBox[{
+          "prmMinList", "\[LeftDoubleBracket]", "i", 
+           "\[RightDoubleBracket]"}]}], 
+         RowBox[{
+          RowBox[{
+          "numSlcList", "\[LeftDoubleBracket]", "i", 
+           "\[RightDoubleBracket]"}], "-", "1"}]], ",", "0"}], "]"}], "//", 
+      "N"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "lenPrmSet"}], "}"}]}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"codeToPrmSet", "[", "code_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"codeList", ",", "temp"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"codeList", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{"0", ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "1", ",", "lenPrmSet"}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"temp", "=", 
+       RowBox[{"code", "-", "1"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Do", "[", 
+       RowBox[{
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+           "codeList", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}],
+            "=", 
+           RowBox[{"Mod", "[", 
+            RowBox[{"temp", ",", 
+             RowBox[{
+             "numSlcList", "\[LeftDoubleBracket]", "i", 
+              "\[RightDoubleBracket]"}]}], "]"}]}], ";", 
+          "\[IndentingNewLine]", 
+          RowBox[{"temp", "=", 
+           RowBox[{"Floor", "[", 
+            RowBox[{"temp", "/", 
+             RowBox[{
+             "numSlcList", "\[LeftDoubleBracket]", "i", 
+              "\[RightDoubleBracket]"}]}], "]"}]}], ";"}], 
+         "\[IndentingNewLine]", "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "lenPrmSet", ",", "1", ",", 
+          RowBox[{"-", "1"}]}], "}"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+         "prmMinList", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}],
+          "+", 
+         RowBox[{
+          RowBox[{
+          "codeList", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}], 
+          
+          RowBox[{
+          "prmSpcList", "\[LeftDoubleBracket]", "i", 
+           "\[RightDoubleBracket]"}]}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "1", ",", "lenPrmSet"}], "}"}]}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.816743694781571*^9, 3.816743737454752*^9}, {
+   3.816743788629286*^9, 3.816743792990736*^9}, {3.816743921839147*^9, 
+   3.8167439393029613`*^9}, {3.816743969377351*^9, 3.816743971719342*^9}, {
+   3.8167440482178173`*^9, 3.81674413017238*^9}, {3.816744180727008*^9, 
+   3.816744232976287*^9}, {3.81674472180383*^9, 3.816744728992855*^9}, 
+   3.8167447879474916`*^9, {3.8167453938625393`*^9, 3.816745399930439*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"ab2514ae-0313-4a26-908e-f5617dbe37e3"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"data0", "=", 
+   RowBox[{
+   "Import", "[", 
+    "\"\</home/kevinsun/work/projects/tripleQ/mpi-cpp-ver-1/TH-res/res-1/\
+original/resSd0/strFct.dat\>\"", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data1", "=", 
+   RowBox[{
+   "Import", "[", 
+    "\"\</home/kevinsun/work/projects/tripleQ/mpi-cpp-ver-1/TH-res/res-1/\
+original/resSd1/strFct.dat\>\"", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data2", "=", 
+   RowBox[{
+   "Import", "[", 
+    "\"\</home/kevinsun/work/projects/tripleQ/mpi-cpp-ver-1/TH-res/res-1/\
+original/resSd2/strFct.dat\>\"", "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.816745091922596*^9, 3.81674515775774*^9}, 
+   3.816745541641324*^9, 3.816745785154611*^9, 3.8167459074979477`*^9, {
+   3.816812394597682*^9, 3.8168124072532663`*^9}, {3.816813928864565*^9, 
+   3.8168139476349697`*^9}, {3.8168144276866913`*^9, 3.816814437118373*^9}, {
+   3.8168950332438917`*^9, 3.816895042479602*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"bac6a809-6444-48e2-9522-7b1a27202d9e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"dataPrmSetCode0", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"data0", "\[LeftDoubleBracket]", 
+      RowBox[{"i", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"Length", "[", "data0", "]"}], ",", "3"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dataPrmSetCode1", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"data1", "\[LeftDoubleBracket]", 
+      RowBox[{"i", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"Length", "[", "data1", "]"}], ",", "3"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dataPrmSetCode2", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"data2", "\[LeftDoubleBracket]", 
+      RowBox[{"i", ",", "1"}], "\[RightDoubleBracket]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", 
+       RowBox[{"Length", "[", "data2", "]"}], ",", "3"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dataPrmSetCode", "=", 
+   RowBox[{
+    RowBox[{"Join", "[", 
+     RowBox[{
+     "dataPrmSetCode0", ",", "dataPrmSetCode1", ",", "dataPrmSetCode2"}], 
+     "]"}], "//", "Sort"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"dataPrmSetCode", "=", 
+   RowBox[{"DeleteDuplicates", "[", "dataPrmSetCode", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{
+   "\"\</home/kevinsun/work/projects/tripleQ/mpi-cpp-ver-1/dataIn/\
+prmSetCodeList.dat\>\"", ",", "dataPrmSetCode"}], "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.816812729206553*^9, 3.816812776029842*^9}, {
+  3.816813966849662*^9, 3.8168139889934807`*^9}, {3.816814038933502*^9, 
+  3.816814061256043*^9}, {3.816814092373837*^9, 3.816814134911762*^9}, {
+  3.816814183509873*^9, 3.8168141880053062`*^9}, {3.81681444744186*^9, 
+  3.816814448939777*^9}, {3.816814738110292*^9, 3.816814807580468*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"227b0d74-5cbe-4c50-bfe5-ad1571c74166"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dataPrmSetCode", "//", "Length"}]], "Input",
+ CellChangeTimes->{{3.816814110684637*^9, 3.816814116916938*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"fab9f688-4228-4e9e-abab-2021af328d48"],
+
+Cell[BoxData["19395"], "Output",
+ CellChangeTimes->{{3.816814113332816*^9, 3.816814138171857*^9}, 
+   3.816814192139539*^9, 3.8168144538096113`*^9, 3.816895064297244*^9},
+ CellLabel->"Out[16]=",ExpressionUUID->"08c38f96-c169-45d5-9f43-b95bcede743a"]
+}, Open  ]]
+},
+WindowSize->{960, 1052},
+WindowMargins->{{Automatic, 0}, {0, Automatic}},
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 4143, 114, 448, "Input",ExpressionUUID->"ab2514ae-0313-4a26-908e-f5617dbe37e3"],
+Cell[4704, 136, 1062, 24, 334, "Input",ExpressionUUID->"bac6a809-6444-48e2-9522-7b1a27202d9e"],
+Cell[5769, 162, 2091, 52, 226, "Input",ExpressionUUID->"227b0d74-5cbe-4c50-bfe5-ad1571c74166"],
+Cell[CellGroupData[{
+Cell[7885, 218, 213, 3, 36, "Input",ExpressionUUID->"fab9f688-4228-4e9e-abab-2021af328d48"],
+Cell[8101, 223, 249, 3, 73, "Output",ExpressionUUID->"08c38f96-c169-45d5-9f43-b95bcede743a"]
+}, Open  ]]
+}
+]
+*)
+

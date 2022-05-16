@@ -1,0 +1,30 @@
+===========Monte Carlo paramters==============
+lattice size: 6x6
+inverse Tmperature: 1.66667
+number of time slice: 512
+number of udv decomposition: 16
+interval of udv decomposition: 32
+time interval: 0.00325521
+random seed: 1
+hopping strength:        1
+hopping ratio:           0.5
+coupling strength:       0.7
+dynamic strength:        0.5
+gradient strength:       1
+squared term strength:   1
+quartic term strength:   1
+chemical potential:      -1.2
+chemical potential bias: 0
+----------------------------------------------
+accumulate error of Green's functions: 4.08475e-07
+effective UDV conditional number:      1.96463
+2000 out of 20000 steps finished
+4000 out of 20000 steps finished
+6000 out of 20000 steps finished
+8000 out of 20000 steps finished
+10000 out of 20000 steps finished
+12000 out of 20000 steps finished
+14000 out of 20000 steps finished
+16000 out of 20000 steps finished
+18000 out of 20000 steps finished
+20000 out of 20000 steps finished
